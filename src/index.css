@@ -1,13 +1,86 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background: rgba(0,0,0,0.1);
+}
+
+.app{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.appHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.appStats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.infoBox{
+  flex: 1;
+  border-top: solid 4px transparent;
+}
+.infoBox:nth-of-type(even){
+  margin: 0 10px;
+}
+
+.active{
+  border-top: solid 4px #696969;
+}
+
+.appLeft {
+  /* this means take up 90% of the screen width */
+  flex: 0.9;
+}
+
+.table {
+  margin-top: 20px;
+  overflow: scroll;
+  height: 400px;
+  color: rgba(0,0,0,0.8);
+}
+.table tr:nth-of-type(odd){
+  background: rgba(0,0,0,0.1);
+}
+.table tr {
+  display: flex;
+  justify-content: space-between;
+}
+.table td {
+  padding: 0.5rem;
+}
+
+.map {
+  height: 500px;
+  padding: 1rem;
+  border-radius: 20px;
+  margin-top: 16px;
+  background: #fff;
+}
+
+/* this the class auto given to the map by leaflet */
+.map .leaflet-container{
+  height: 100%;
+}
+
+.map .mapFlag{
+  width: 40px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+@media (max-width: 990px){
+  .app{
+    flex-direction: column;
+  }
 }
