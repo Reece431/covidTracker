@@ -6,13 +6,6 @@ import { connect } from 'react-redux';
 const Map = ({coords, table, active}) => {
 
     const mapRef = useRef();
-    const [focus, setFocus] = useState(false);
-
-    useEffect(() => {
-        if(focus){
-            mapRef.current.focus()
-        }
-    },[focus])
 
     const checkActive = () => (
         active ? active.toLowerCase() : 'cases'
@@ -44,20 +37,23 @@ const Map = ({coords, table, active}) => {
                     }
                     eventHandlers={{
                         click: () => {
-                          console.log(mapRef.current)
+                          mapRef.current.focus()
                         },
                       }}
                     tabIndex="0"
                     aria-label="circle"
+                    role="tooltip"
                 >
-                    <Popup tabIndex="0" aria-live="polite" ref={mapRef}>
+                    <Popup>
+                        <div tabIndex="0" ref={mapRef}>
                         <div>
-                            <img className="mapFlag" src={country.countryInfo.flag} alt={country.country} role="image"/>
+                            <img className="mapFlag" src={country.countryInfo.flag} alt={country.country} role="image" aria-hidden="true"/>
                             {country.country}
                         </div>
                         <p>
                             {`${y}: ${numeral(country[y]).format("0,0")}`}
                         </p>
+                        </div>
                     </Popup>
 
                 </Circle>
@@ -75,7 +71,6 @@ const Map = ({coords, table, active}) => {
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 aria-label="Copyright-information"
-                aria-hidden="true"
                 />
                 {showDataOnMap(table,checkActive())}
             </MapContainer>

@@ -6,7 +6,8 @@ const Table = ({td}) => {
 
     /*dont forget you can destructure here too
     so can use x or {country, cases}*/
-    const table = td.map(x => {
+    console.log(td.length);
+    const table = td.map((x,index) => {
         return (
             <tr key={x.country} tabIndex="0">
                 <td>{x.country}</td>
@@ -16,7 +17,7 @@ const Table = ({td}) => {
     })
 
     return (
-        <div className="table" tabIndex="0" aria-label="Global-covid-cases-by-country">
+        <div className="table" tabIndex="0" aria-label="Global-covid-cases-by-country 223 results">
             {table}
         </div>
     )
