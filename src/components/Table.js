@@ -6,7 +6,7 @@ const Table = ({td}) => {
 
     /*dont forget you can destructure here too
     so can use x or {country, cases}*/
-    console.log(td.length);
+    //console.log(td.length);
     const table = td.map((x,index) => {
         return (
             <tr key={x.country} tabIndex="0">

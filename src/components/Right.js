@@ -11,7 +11,7 @@ const Right = () => {
                 <h3>Live cases by Country</h3>
                 {/* Table listing country data */}
                 <Table/>
-                <h3>Wordwide new cases</h3>
+                <h3>Wordwide cases over past 30 days</h3>
                 {/* Graph */}
                 <LineGraph/>
             </CardContent>

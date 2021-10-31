@@ -52,8 +52,6 @@ export const GetCountryCovidData = (x) => {
 export const LastMonth = () => {
     return async (dispatch) => {
         const res = await disease.get('/historical/all?lastdays=30');
-
-        /*works but I dont get it yet*/ 
         const buildChartData = (data, casesType="cases") => {
             let chartData = [];
             let lastDataPoint;

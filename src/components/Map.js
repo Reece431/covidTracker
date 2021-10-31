@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect} from 'react';
+import React, {useRef} from 'react';
 import {MapContainer, TileLayer, Circle, Popup} from 'react-leaflet';
 import numeral from 'numeral';
 import { connect } from 'react-redux';
