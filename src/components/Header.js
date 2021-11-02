@@ -17,9 +17,9 @@ const Header = (props) => {
     },[country])
 
     /*helper function to create menuitems*/
-    const menuItems = props.countries.map(country => {
+    const menuItems = props.countries.map((country, index) => {
         return (
-            <MenuItem key={country.value} value={country.value} role="option">{country.name}</MenuItem>
+            <MenuItem key={country.value + index} value={country.value} role="option">{country.name}</MenuItem>
         )
     })
 

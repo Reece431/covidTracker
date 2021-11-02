@@ -50,14 +50,14 @@ body {
   height: 400px;
   color: rgba(0,0,0,0.8);
 }
-.table tr:nth-of-type(odd){
+.table .row:nth-of-type(odd){
   background: rgba(0,0,0,0.1);
 }
-.table tr {
+.table .row {
   display: flex;
   justify-content: space-between;
 }
-.table td {
+.table .data {
   padding: 0.5rem;
 }
 

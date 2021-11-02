@@ -9,10 +9,10 @@ const Table = ({td}) => {
     //console.log(td.length);
     const table = td.map((x,index) => {
         return (
-            <tr key={x.country} tabIndex="0">
-                <td>{x.country}</td>
-                <td><strong>{numeral(x.cases).format("0,0")}</strong></td>
-            </tr>
+            <div className="row" key={x.country} tabIndex="0">
+                <div className="data">{x.country}</div>
+                <div className="data"><strong>{numeral(x.cases).format("0,0")}</strong></div>
+            </div>
         )
     })
 
